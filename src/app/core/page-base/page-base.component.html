@@ -1,0 +1,33 @@
+<div class="example-container">
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+            (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Angular learning app</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-sidenav-container class="example-sidenav-container">
+        <mat-sidenav #snav mode="side" opened >
+            <mat-nav-list>
+                <a mat-list-item [routerLink]="['/angular-app/rxjs-learning', nav.url]" *ngFor="let nav of menuList">{{nav.menuName}}</a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <mat-card>
+                <mat-card-content>
+                    <router-outlet></router-outlet>
+                </mat-card-content>
+              </mat-card>
+            
+            <!-- <p>test para</p> -->
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

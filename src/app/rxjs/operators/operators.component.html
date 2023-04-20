@@ -1,0 +1,12 @@
+<p>operators works!</p>
+<button mat-raised-button (click)="executeOperator('reduce')" color="primary"> Execute Reduce</button>
+<button mat-raised-button (click)="executeOperator('scan')" color="primary"> Execute Scan</button>
+
+<ng-container *ngIf="operatorObservable$|async as operator">
+    <section *ngIf="operator">
+        <h5>
+            Opertors
+        </h5>
+        <pre>{{operator}}</pre>
+    </section>
+</ng-container>

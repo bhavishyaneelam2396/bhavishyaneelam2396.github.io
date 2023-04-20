@@ -1,0 +1,15 @@
+<button mat-raised-button color="primary" (click)="placeOrder()">Place order</button>
+<hr>
+<button (click)="_flatBread.next('flat bread')">Add Flat bread</button>
+<button (click)="_meat.next('meat')">Add Meat</button>
+<button (click)="_sause.next('sause')">Add Sause</button>
+<button (click)="_tomato.next('tomato')">Add Tomatoe</button>
+<button (click)="_cabbage.next('cabbage')">Add Cabbage</button>
+
+<ng-container *ngIf="delivery$|async as product">
+    <section *ngIf="product?.product">
+        <img width="50%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm2Hqzocj6N2ofgUjElz83J9RHfWBs-fFOEmqMH76R&s">
+    </section>
+    <h5> Ingredients: </h5>
+    <pre>{{product|json}}</pre>
+</ng-container>
